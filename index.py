@@ -1,13 +1,11 @@
-
 import cv2
-import numpy as np # 行列計算ライブラリ、Numpyをインポート
 
 # VideoCapture オブジェクトを取得
 cap = cv2.VideoCapture(0)
- 
-if cap.isOpened(): 
-    # get vcap property 
-    width  = cap.get(cv2.CAP_PROP_FRAME_WIDTH)   # float `width`
+
+if cap.isOpened():
+    # get vcap property
+    width = cap.get(cv2.CAP_PROP_FRAME_WIDTH)  # float `width`
     height = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)  # float `height`
     # 以下の方法でも可
     # width  = cap.get(3)  # float `width`
@@ -20,12 +18,13 @@ if cap.isOpened():
 else:
     print("カメラが取得できない！")
 
-while(True):
-    ret, img = cap.read() # 現在のカメラ画像を取得
+while True:
+    ret, img = cap.read()  # 現在のカメラ画像を取得
 
     # ここにエフェクトを追加していく
 
-    cv2.imshow('tapioca_drink.png',img)
+    cv2.imshow("tapioca_drink.png", img)
 
     key = cv2.waitKey(10)
-    if key == 27 or key == 113: break
+    if key == 27 or key == 113:
+        break
